@@ -1,0 +1,8 @@
+<h1>New Question</h1>
+<form>
+	<label> Description: <textarea ng-model="new_question.description"></textarea></label>
+	<label> Correct Answer: <textarea ng-model="new_question.correct_answer"></textarea></label>
+	<label> Fake Answer 1: <textarea ng-model="new_question.fake_answer_1"></textarea></label>
+	<label> Fake Answer 2: <textarea ng-model="new_question.fake_answer_2"></textarea></label>
+	<input type="submit" ng-click="addQuestion()">
+</form>

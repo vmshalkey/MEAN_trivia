@@ -1,0 +1,28 @@
+<nav>
+	<button ng-if="!loggedUser" ng-click="loginUser()">Login</button>
+	<button ng-if="loggedUser" ng-click="logoutUser()">Logout</button>
+</nav>
+<div style="border: 1px solid black; width: 400px">
+	<h3>Click the button to start the trivia game</h3>
+	<a href="#/games"><button style="margin: 5% 20%; padding: 10px">Play!</button></a>
+</div>
+
+<label>Search:
+	<input type="text" ng-model="filter_name" placeholder="name">
+	<input type="number" ng-model="filter_score" placeholder="score or percentage">
+</label>
+
+<table>
+	<thead>
+		<th>Name</th>
+		<th>Score</th>
+		<th>Percentage</th>
+	</thead>
+	<tbody>
+		<tr ng-repeat="game in games | filter: filter_name | filter: filter_score: true | orderBy: '-score' ">
+			<td>{{game.name}}</td>
+			<td>{{game.score}}/3</td>
+			<td>{{game.percentage | number: 1}}%</td>
+		</tr>
+	</tbody>
+</table>

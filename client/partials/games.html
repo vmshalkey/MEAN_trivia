@@ -1,0 +1,33 @@
+	<p ng-if="loggedUser">You are logged in as {{loggedUser}}</p>
+	<p ng-if="!loggedUser">You are not logged in properly. Please refresh the page to reattempt login</p>
+<form ng-if="loggedUser">
+	<div>
+		<h1>1. {{shuffled_questions[0].description}}</h1>
+		<input type="radio" name="question_1" ng-model="new_game.question_1" ng-value="1">{{shuffled_questions[0].correct_answer}}
+		<br>
+		<input type="radio" name="question_1" ng-model="new_game.question_1" ng-value="0">{{shuffled_questions[0].fake_answer_1}}
+		<br>
+		<input type="radio" name="question_1" ng-model="new_game.question_1" ng-value="0">{{shuffled_questions[0].fake_answer_2}}
+		<br>
+	</div>
+
+	<div>
+		<h1>2. {{shuffled_questions[1].description}}</h1>
+		<input type="radio" name="question_2" ng-model="new_game.question_2" ng-value="1">{{shuffled_questions[1].correct_answer}}
+		<br>
+		<input type="radio" name="question_2" ng-model="new_game.question_2" ng-value="0">{{shuffled_questions[1].fake_answer_1}}
+		<br>
+		<input type="radio" name="question_2" ng-model="new_game.question_2" ng-value="0">{{shuffled_questions[1].fake_answer_2}}
+		<br>
+	</div>
+	<div>
+		<h1>3. {{shuffled_questions[2].description}}</h1>
+		<input type="radio" name="question_3" ng-model="new_game.question_3" ng-value="1">{{shuffled_questions[2].correct_answer}}
+		<br>
+		<input type="radio" name="question_3" ng-model="new_game.question_3" ng-value="0">{{shuffled_questions[2].fake_answer_1}}
+		<br>
+		<input type="radio" name="question_3" ng-model="new_game.question_3" ng-value="0">{{shuffled_questions[2].fake_answer_2}}
+		<br>
+	</div>
+	<input type="submit" ng-click="addGame()">
+</form>
